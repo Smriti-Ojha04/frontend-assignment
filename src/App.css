@@ -1,0 +1,15 @@
+.container {
+    top: 0;
+    display: grid;
+    background-color: azure;
+}
+
+.bar {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.scatter {
+    grid-column: 1;
+    grid-row: 2;
+}
