@@ -12,7 +12,7 @@ function Barchart() {
         alcoholData += ele.Alcohol;
         malicData += ele["Malic Acid"];
     });
-    let barData = [alcoholData, malicData / data.length];
+    let barData = [alcoholData, Number((malicData / data.length).toFixed(2))];
     let barCategories = ["Alcohol", "Malic Acid"];
     const option1 = {
         color: ["#d18492"],
@@ -51,10 +51,6 @@ function Barchart() {
         },
         tooltip: {
             trigger: "axis",
-            /* formatter: function({ c0 }) {
-                 var x = { c0 }.toFixed(2);
-                 return x;
-             },*/
             formatter: '{b0}: {c0}',
 
         },
