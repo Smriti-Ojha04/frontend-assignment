@@ -5,21 +5,33 @@ import { data } from "../Winedata";
 
 
 function Barchart() {
-    /// Component for rendering bar chart
-    let malicData = 0;
-    let alcoholData = 0;
+    //Component for rendering bar chart
+    let alcoholData = [];
+    let cnt = [];
+    let malicAcid = [];
     data.forEach((ele) => {
-        alcoholData += ele.Alcohol;
-        malicData += ele["Malic Acid"];
+        if (!alcoholData.includes(ele.Alcohol)) {
+            alcoholData.push(ele.Alcohol);
+            cnt.push(1);
+            malicAcid.push(ele["Malic Acid"])
+        } else {
+            var ind = alcoholData.indexOf(ele.Alcohol);
+            cnt[ind] = cnt[ind] + 1;
+            malicAcid[ind] += ele["Malic Acid"]
+        }
     });
-    let barData = [alcoholData, Number((malicData / data.length).toFixed(2))];
-    let barCategories = ["Alcohol", "Malic Acid"];
+    var malicAcidAvg = [];
+    for (var i in malicAcid) {
+        malicAcidAvg.push(Number((malicAcid[i] / cnt[i]).toFixed(2)))
+    }
+    // let barData = [alcoholData, Number((malicData / data.length).toFixed(2))];
+    // let barCategories = ["Alcohol", "Malic Acid"];
     const option1 = {
         color: ["#d18492"],
         xAxis: {
             type: "category",
-            data: barCategories,
-            name: 'Beverages',
+            data: alcoholData,
+            name: 'Alcohol',
             nameLocation: 'middle',
             nameGap: 50,
             nameTextStyle: {
@@ -36,7 +48,7 @@ function Barchart() {
         },
         yAxis: {
             type: 'value',
-            name: 'Consumption',
+            name: 'Average of Malic Acid',
             nameLocation: 'middle',
             nameGap: 50,
             nameTextStyle: {
@@ -55,7 +67,7 @@ function Barchart() {
 
         },
         series: [{
-            data: barData,
+            data: malicAcidAvg,
             type: "bar",
 
         }, ],
