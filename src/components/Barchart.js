@@ -27,7 +27,7 @@ function Barchart() {
     // let barData = [alcoholData, Number((malicData / data.length).toFixed(2))];
     // let barCategories = ["Alcohol", "Malic Acid"];
     const option1 = {
-        color: ["#d18492"],
+        color: ["#008081"],
         xAxis: {
             type: "category",
             data: alcoholData,
@@ -69,6 +69,19 @@ function Barchart() {
         series: [{
             data: malicAcidAvg,
             type: "bar",
+            barWidth: "10%",
+            showBackground: true,
+            backgroundStyle: {
+                color: 'rgba(220,220,220,0.8)'
+            },
+            itemStyle: {
+                borderRadius: [5, 5, 0, 0],
+                borderType: 'solid',
+                borderColor: '#008081',
+                shadowColor: '#5470c6',
+                shadowBlur: 3
+
+            }
 
         }, ],
     };

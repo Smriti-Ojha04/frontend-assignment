@@ -11,7 +11,7 @@ function Scatterplot() {
         scatterData.push([ele["Color intensity"], ele.Hue]);
     });
     const option2 = {
-        color: ["#d18492"],
+        color: ["#008081"],
         xAxis: {
             name: 'Color Intensity',
             nameLocation: 'middle',
