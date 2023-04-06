@@ -8,4 +8,5 @@ Please follow below steps to install yarn and run the application
 
 
  Screenshots of charts :
- ![Screenshot (160)](https://user-images.githubusercontent.com/129867708/229832323-a8431939-4d6d-45f6-bca3-ee72c08f8896.png)
+ ![Screenshot (164)](https://user-images.githubusercontent.com/129867708/230441018-a005e2f4-32ab-42c7-8285-3faf389df576.png)
+
